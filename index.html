@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            justify-content:center;
+            text-align:center;
+            padding:80px;
+            margin:0px;  
+            background-color:rgb(112, 189, 212);
+        }
+        .center{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .border-box {
+            justify-content: center;
+            width: 30;
+            max-width: 1100px;
+            border: 5px solid rgb(221, 230, 233);
+            background-color: rgb(221, 230, 233);
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        input[type="text"] {
+            height: 35px;
+            border-color: rgb(173, 191, 209); 
+        }
+        .star {
+  position: absolute;
+  color:rgb(255, 208, 0);
+  animation: fadeOut 3s ease forwards;
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-450px);
+  }
+}
+    </style>
+    <script>
+    function chintu(){
+        name =document.getElementById("name").value
+        father=document.getElementById("father").value
+        mother=document.getElementById("mother").value
+        gmail=document.getElementById("gmail").value
+        message1="",message2="",message3="",message4="";
+    if(name==""){
+        message1="Enter the name";
+    }
+    else if(father==""){
+        message2="Enter the father name";
+    }
+    else if(mother==""){
+        message3="Enter the mother name";
+    }
+    else if(gmail==""){
+        message4="Enter the gmail";
+    }
+    else if(true){
+   const button = event.target;
+  const rect = button.getBoundingClientRect();
+  for (let i = 0; i < 100; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.innerHTML = ' ★';
+    const size = Math.random() * 24 + 16;
+    star.style.fontSize = `${size}px`;
+    star.style.left = `${rect.left + Math.random() * rect.width}px`;
+    star.style.top = `${rect.top + Math.random() * rect.height}px`;
+    
+    // Append to body to ensure stars animate out of the button
+    document.body.appendChild(star);
+
+    // Position the star at the button's location
+    star.style.left = `${rect.left + Math.random() * rect.width}px`;
+    star.style.top = `${rect.top + Math.random() * rect.height}px`;
+
+    // Remove the star after animation ends
+    star.addEventListener('animationend', () => {
+      star.remove();
+    });
+    window.location.href = 'final.html'
+  }
+    }
+    document.getElementById("men").innerHTML=message1;
+    document.getElementById("men1").innerHTML=message2;
+    document.getElementById("men2").innerHTML=message3;
+    document.getElementById("men3").innerHTML=message4;
+}
+    </script>
+</head>
+<body class="body">
+    <div class="center">
+    <div class="border-box">
+    <h1 style="color:blue;">student's information </h1>
+    <p>Enter the name:</p>
+    <input style="width:350px;height: 40px;" type="text"placeholder="Enter the name" id="name" class="input"><br>
+    <p id="men" style="color:red;"></p>
+    <p>Enter the father name:</p>
+    <input  style="width:350px;height:40px;" type="text"placeholder="Enter the father name" id="father">
+    <p id="men1" style="color:red;"></p>
+    <p>Enter the mother name:</p>
+    <input  style="width:350px;height:40px;" type="text"placeholder="Enter the mother name" id="mother">
+    <p id="men2" style="color:red;"></p>
+    <p>Enter the gmail:</p>
+    <input  style="width:350px;height:40px;" type="text"placeholder="Enter the gmail" id="gmail"><br>
+    <p id="men3" style="color:red;"></p>
+    <input  style="width:350px;height:40px;background-color:blue;" type="submit"placeholder="Enter the gmail" onclick='chintu()'>
+</div>
+</div>
+</body>
+</html>
